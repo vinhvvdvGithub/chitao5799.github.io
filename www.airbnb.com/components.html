@@ -1,0 +1,228 @@
+<!--node
+     var params={file:"components.html"}
+    var ls=require("C:\\Users\\NCT99\\AppData\\Roaming\\npm\\node_modules\\live-server") 
+    ls.start(params)-->
+<html>
+
+<head>
+    <link rel="stylesheet" href="./font/fontawesome-free-5.12.1-web/css/all.css">
+    <!-- <link rel="stylesheet" href="./font/fontawesome-free-5.12.1-web/css/brands.css">
+    <link rel="stylesheet" href="./font/fontawesome-free-5.12.1-web/css/solid.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery_3.4.1.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.12.1.custom\\jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.12.1.custom\\jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start menu -->
+    <div id="menu">
+        <ul>
+            <li>
+                <a href=""><i class="fas fa-globe" style="margin-right: 5px;"></i>English (US)</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i>USD</a>
+            </li>
+            <li><a href="">Host a home</a></li>
+            <li><a href="">Host an experience</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Sign up</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+    </div>
+    <!-- end menu -->
+    <!-- <hr style="clear: both; margin:10px 0px;" /> -->
+    <!--start form  -->
+    <div id="form">
+        <div class="title">Book unique places to stay and things to do.</div>
+        <form action="">
+            <div class="label">WHERE</div>
+            <div class="input">
+                <input class="where inputText" type="text" placeholder="Anywhere">
+            </div>
+            <div id="checking">
+                <div class="trai">
+                    <div class="label">CHECK-IN</div>
+                    <div class="input">
+                        <input type="text" placeholder="mm/dd/yyyy" id="checkin" class="inputDate">
+                    </div>
+                </div>
+                <div class="phai">
+                    <div class="label">CHECK-OUT</div>
+                    <div class="input">
+                        <input type="text" placeholder="mm/dd/yyyy" id="checkout" class="inputDate">
+                    </div>
+                </div>
+            </div>
+            <div class="label">GUESTS</div>
+            <div class="input guestsItem">
+                <div class="guests">
+                    <div>
+                        <div class="inputText" id="guestsNumber">Guests</div>
+                    </div>
+                    <div><i class="fa fa-angle-down" id="arrow"></i></div>
+
+                </div>
+                <div class="menuItem">
+                    <div class="item" style="margin-bottom: 25px;">
+                        <div class="titleItem">Adults</div>
+                        <div class="choose">
+                            <!-- <i class="fas fa-plus-circle"></i> -->
+                            <svg height="34" width="34" id="adultMinus">
+                            <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                            <div class="number" style="letter-spacing: 1px;" id="adultNumber">0+</div>
+                            <!-- <i class="fas fa-minus-circle"></i> -->
+                            <svg height="34" width="34" id="adultPlus" class="plus">
+                            <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                            <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="titleItem2">
+                            <div class="titleItem">Children</div>
+                            <div>Ages 2–12</div>
+                        </div>
+
+                        <div class="choose">
+                            <svg height="34" width="34" id="childrenMinus">
+                            <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                            <div class="number" style="letter-spacing: 1px;" id="childrenNumber">0+</div>
+                            <svg height="34" width="34" id="childrenPlus" class="plus">
+                            <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                            <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="titleItem2">
+                            <div class="titleItem">Infants</div>
+                            <div>Under 2</div>
+                        </div>
+                        <div class="choose">
+                            <svg height="34" width="34" id="infantMinus">
+                            <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                            <div class="number" style="letter-spacing: 1px;" id="infantsNumber">0+</div>
+                            <svg height="34" width="34" id="infantPlus" class="plus">
+                            <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                            <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                            <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                            Sorry, your browser does not support inline SVG.                           
+                          </svg>
+                        </div>
+                    </div>
+                    <div class="do">
+                        <div id="clear" class="titleItem">Clear</div>
+                        <div id="save" style="font-size: 14px; color: #02858A;cursor: pointer;float: right;">Save</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <!-- end form -->
+    <div class="wraper" style="width:90%;height:auto;margin: auto;background-color: white;">
+
+
+        <div style="width:100%;clear:both;"></div>
+        <div id="explore">
+            <div class="explore_item">
+                <a href="#" class="explore_link"><img src="./images/a1.png" alt="" class="explore_image">
+                    <p>Stays</p>
+                </a>
+            </div>
+            <div class="explore_item">
+                <a href="#" class="explore_link"><img src="./images/a1.png" alt="" class="explore_image">
+                    <p>Experiences</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="introduce_item">
+            <div class="content">
+                <a href="#" class="item_content">
+                    <img src="./images/introduce1.png" alt="">
+                    <div class="title">UNITED STATES</div>
+                    <div class="text-item">Ghost Towns and Saloons</div>
+                    <div class="text-item">
+                        <ul class="introduce-ul">
+                            <li>From $595/person</li>
+                            <li><span>&nbsp;·</span> 3 days</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" class="toDiffContents">
+                <div>Show all addventures</div>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <!--star: <svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height: 12px; width: 12px; fill: currentcolor;">
+        <path d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z">      
+        </path></svg> -->
+
+        <div class="place_stay_item">
+            <a href="#" class="toItemDetail">
+
+                <div class="img">
+                    <img src="./images/stay1.jpg" alt="">
+                </div>
+                <div class="top">
+                    <div class="title">Portugal</div>
+                    <div class="star">
+                        <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                        <p style="margin-left:5px;color: #222222;">4,66</p>
+                    </div>
+                </div>
+
+                <div class="description">PORTA33 I PORTO PENTHOUSE Dupl...</div>
+
+            </a>
+            <div class="money">
+                <p class="price">$122</p>
+                <p> / night</p>
+            </div>
+
+        </div>
+
+        <div class="feature_item">
+            <a>
+                <div class="img">
+                    <img src="./images/featrue1.jpg" alt="">
+                </div>
+                <div class="title">200+ VERIFIED STAYS</div>
+                <p>Explore chicago's stunning architecture from the inside-in homes verified for quality and design.
+                </p>
+            </a>
+        </div>
+
+
+
+    </div>
+    <script type="text/javascript" src="./js/components.js"></script>
+</body>
+
+</html>

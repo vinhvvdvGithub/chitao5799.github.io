@@ -1,0 +1,82 @@
+<html>
+  <head>
+  <title>learn slick carousel</title>
+  <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick-theme.css"/>
+  <style>
+   .slickNext,.slickPrev {
+    height: 20px;
+    padding:0px 10px ;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: rebeccapurple;
+    cursor: pointer;
+    color: white;
+}
+.your-class{
+  width: 1200px;
+  height: 400px;
+  margin: 0 auto;
+  border:1px dashed red;
+
+}
+  .your-class>div.itemOneSlide{
+ width: 33%;
+ height: 400px;
+ background-color: blue;
+ display: inline-block;
+ border: 1px solid black;
+}
+  </style>
+  </head>
+  <body>
+  <div class="bao">
+    <div class="slickNext">next</div>
+    <div class="slickPrev">prev</div>
+    <div class="your-class">
+      <div class="item">
+        <div>your 1content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 2content1</div>
+      </div> 
+      <div class="itemOneSlide">
+        <div>your 3content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 4content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 5content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 6content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 7content1</div>
+      </div>
+       <div class="itemOneSlide">
+        <div>your 8content1</div>
+      </div>
+    </div>
+</div>
+  <script type="text/javascript" src="./js/jquery_3.4.1.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+  <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+         slidesToShow: 3,
+      slidesToScroll: 1,
+      nextArrow:$('.slickNext'),
+      prevArrow:$('.slickPrev')
+      // autoplay: true,
+      // autoplaySpeed: 2000
+      });
+      // $('.slickNext').slick('slickNext');
+    });
+  </script>
+
+  </body>
+</html>

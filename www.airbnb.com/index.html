@@ -1,0 +1,805 @@
+<html>
+
+<head>
+    <title>AIRBNB</title>
+    <link rel="stylesheet" href="./font/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./js/jquery_3.4.1.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.12.1.custom\\jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.12.1.custom\\jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div id="header">
+      <div class="wrapper_header">
+        <a href="">
+            <svg class="logo" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height: 1em; width: 1em; display: block; fill: currentcolor;">
+                <path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+                </path>
+            </svg>
+        </a>
+
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href=""><i class="fas fa-globe" style="margin-right: 5px;"></i>English (US)</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i>USD</a>
+                </li>
+                <li><a href="">Host a home</a></li>
+                <li><a href="">Host an experience</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Sign up</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </div>
+        <div id="form">
+            <div class="title">Book unique places to stay and things to do.</div>
+            <form action="">
+                <div class="label">WHERE</div>
+                <div class="input">
+                    <input class="where inputText" type="text" placeholder="Anywhere">
+                </div>
+                <div id="checking">
+                    <div class="trai">
+                        <div class="label">CHECK-IN</div>
+                        <div class="input">
+                            <input type="text" placeholder="mm/dd/yyyy" id="checkin" class="inputDate">
+                        </div>
+                    </div>
+                    <div class="phai">
+                        <div class="label">CHECK-OUT</div>
+                        <div class="input">
+                            <input type="text" placeholder="mm/dd/yyyy" id="checkout" class="inputDate">
+                        </div>
+                    </div>
+                </div>
+                <div class="label">GUESTS</div>
+                <div class="input guestsItem">
+                    <div class="guests">
+                        <div>
+                            <div class="inputText" id="guestsNumber">Guests</div>
+                        </div>
+                        <div><i class="fa fa-angle-down" id="arrow"></i></div>
+
+                    </div>
+                    <div class="menuItem">
+                        <div class="item" style="margin-bottom: 25px;">
+                            <div class="titleItem">Adults</div>
+                            <div class="choose">
+                                <!-- <i class="fas fa-plus-circle"></i> -->
+                                <svg height="34" width="34" id="adultMinus">
+                                    <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                                <div class="number" style="letter-spacing: 1px;" id="adultNumber">0+</div>
+                                <!-- <i class="fas fa-minus-circle"></i> -->
+                                <svg height="34" width="34" id="adultPlus" class="plus">
+                                    <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                                    <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="titleItem2">
+                                <div class="titleItem">Children</div>
+                                <div>Ages 2–12</div>
+                            </div>
+
+                            <div class="choose">
+                                <svg height="34" width="34" id="childrenMinus">
+                                    <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                                <div class="number" style="letter-spacing: 1px;" id="childrenNumber">0+</div>
+                                <svg height="34" width="34" id="childrenPlus" class="plus">
+                                    <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                                    <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="titleItem2">
+                                <div class="titleItem">Infants</div>
+                                <div>Under 2</div>
+                            </div>
+                            <div class="choose">
+                                <svg height="34" width="34" id="infantMinus">
+                                    <circle cx="17" cy="17" r="16" stroke="#B3DADB" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:rgb(204,230,231);stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                                <div class="number" style="letter-spacing: 1px;" id="infantsNumber">0+</div>
+                                <svg height="34" width="34" id="infantPlus" class="plus">
+                                    <circle cx="17" cy="17" r="16" stroke="#02858A" stroke-width="1" fill="none" />
+                                    <line x1="13" y1="17" x2="21" y2="17" style="stroke:#5CB0B4;stroke-width:2" />
+                                    <line x1="17" y1="13" x2="17" y2="21" style="stroke:#5CB0B4;stroke-width:2" />
+                                    Sorry, your browser does not support inline SVG.                           
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="do">
+                            <div id="clear" class="titleItem">Clear</div>
+                            <div id="save" style="font-size: 14px; color: #02858A;cursor: pointer;float: right;">Save</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Search">
+                </div>
+            </form>
+        </div>
+        <div class="slogan">
+            <a href="#">
+                Over 300 unique places to stay in Oregon
+            </a>
+        </div>
+       </div>
+    </div>
+    <!-- end header -->
+    <div id="wraper">
+        <!-- start exploreContent -->
+        <div id="exploreContent">
+            <div class="title titleInContent">
+                Explore Airbnb
+            </div>
+            <div id="explore">
+                <div class="explore_item">
+                    <a href="#" class="explore_link"><img src="./images/a1.png" alt="" class="explore_image">
+                        <p>Stays</p>
+                    </a>
+                </div>
+                <div class="explore_item">
+                    <a href="#" class="explore_link"><img src="./images/explore2.JPG" alt="" class="explore_image">
+                        <p>Experiences</p>
+                    </a>
+                </div>
+                <div class="explore_item">
+                    <a href="#" class="explore_link"><img src="./images/explore4.JPG" alt="" class="explore_image">
+                        <p>Adventures</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- end start exploreContent -->
+        <!-- start introduce content -->
+            <div class="introduceContent">
+                 <div class="title titleInContent">
+                    Introducing Online Experiences
+                </div>
+                <div class="wrapper_introduce">
+                <div class="introduce_item">
+                    <div class="content">
+                        <a href="#" class="item_content">
+                            <img src="./images/introduce1.png" alt="">
+                            <div class="title">UNITED STATES</div>
+                            <div class="text-item">Ghost Towns and Saloons</div>
+                            <div class="text-item">
+                                <ul class="introduce-ul">
+                                    <li>From $595/person</li>
+                                    <li><span>&nbsp;·</span> 3 days</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <div class="introduce_item">
+                    <div class="content">
+                        <a href="#" class="item_content">
+                            <img src="./images/introduce2.JPG" alt="">
+                            <div class="title">SAN FRANCISCO</div>
+                            <div class="text-item">Ghost Towns and Saloons</div>
+                            <div class="text-item">
+                                <ul class="introduce-ul">
+                                    <li>From $595/person</li>
+                                    <li><span>&nbsp;·</span> 3 days</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <div class="introduce_item">
+                    <div class="content">
+                        <a href="#" class="item_content">
+                            <img src="./images/introduce3.JPG" alt="">
+                            <div class="title">DENVER</div>
+                            <div class="text-item">Ghost Towns and Saloons</div>
+                            <div class="text-item">
+                                <ul class="introduce-ul">
+                                    <li>From $595/person</li>
+                                    <li><span>&nbsp;·</span> 3 days</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <div class="introduce_item">
+                    <div class="content">
+                        <a href="#" class="item_content">
+                            <img src="./images/introduce4.JPG" alt="">
+                            <div class="title">NEW ORLEANS</div>
+                            <div class="text-item">Ghost Towns and Saloons</div>
+                            <div class="text-item">
+                                <ul class="introduce-ul">
+                                    <li>From $595/person</li>
+                                    <li><span>&nbsp;·</span> 3 days</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <div class="introduce_item">
+                    <div class="content">
+                        <a href="#" class="item_content">
+                            <img src="./images/introduce5.JPG" alt="">
+                            <div class="title">MIAMI</div>
+                            <div class="text-item">Ghost Towns and Saloons</div>
+                            <div class="text-item">
+                                <ul class="introduce-ul">
+                                    <li>From $595/person</li>
+                                    <li><span>&nbsp;·</span> 3 days</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <!-- end introduce content -->
+        <div class="AddventuresBlock">
+            <a href="#" class="toDiffContents">
+                <div>Show all addventures</div>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+        <!--start playstays -->
+        <div class="playstayContent">
+            <div class="title titleInContent">
+                Play stays
+            </div> 
+            <div class="playstayContentButton">
+                <div class="next"><img src="images/arrowRight.png" style="width: 50px;height: 50px;" alt=""></div>
+                <div class="prev"><img src="images/arrowLeft.png" style="width: 50px;height: 50px;" alt=""></div>
+            </div>
+            <div class="wrapPlaystayItems">
+               
+                <div class="wrap4itemPlayStay itemPlayStayActive">
+                    <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/stay1.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Portugal</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,66</p>
+                                </div>
+                            </div>
+                            <div class="description">Porta33 I Porto Penthouse Dupl...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$122</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay2.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire house</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,83</p>
+                                </div>
+                            </div>
+                            <div class="description">Central Whitstable Town House Fab!</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$244</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay3.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire townhouse</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,78</p>
+                                </div>
+                            </div>
+                            <div class="description">5 mins cab ride to City Centre in...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$89</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                    <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay4l.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Private room</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,36</p>
+                                </div>
+                            </div>
+                            <div class="description">Georgian splendour</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$156</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="wrap4itemPlayStay">
+                    <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay6.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Portugal</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,66</p>
+                                </div>
+                            </div>
+                            <div class="description">Porta33 I Porto Penthouse Dupl...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$122</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay5.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire house</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,83</p>
+                                </div>
+                            </div>
+                            <div class="description">Central Whitstable Town House Fab!</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$244</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay7.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire townhouse</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,78</p>
+                                </div>
+                            </div>
+                            <div class="description">5 mins cab ride to City Centre in...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$89</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                    <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay8.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Private room</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,36</p>
+                                </div>
+                            </div>
+                            <div class="description">Georgian splendour</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$156</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="wrap4itemPlayStay">
+                    <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay9.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Portugal</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,66</p>
+                                </div>
+                            </div>
+                            <div class="description">Porta33 I Porto Penthouse Dupl...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$122</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay10.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire house</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,83</p>
+                                </div>
+                            </div>
+                            <div class="description">Central Whitstable Town House Fab!</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$244</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay11.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire townhouse</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,78</p>
+                                </div>
+                            </div>
+                            <div class="description">5 mins cab ride to City Centre in...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$89</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                    <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay12.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Private room</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,36</p>
+                                </div>
+                            </div>
+                            <div class="description">Georgian splendour</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$156</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="wrap4itemPlayStay">
+                    <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay13.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Portugal</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,66</p>
+                                </div>
+                            </div>
+                            <div class="description">Porta33 I Porto Penthouse Dupl...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$122</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay14.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire house</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,83</p>
+                                </div>
+                            </div>
+                            <div class="description">Central Whitstable Town House Fab!</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$244</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                     <div class="place_stay_item ">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay15.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Entire townhouse</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,78</p>
+                                </div>
+                            </div>
+                            <div class="description">5 mins cab ride to City Centre in...</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$89</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                    <div class="place_stay_item">
+                        <a href="#" class="toItemDetail">
+                            <div class="img">
+                                <img src="./images/playstay16.jpg" alt="">
+                            </div>
+                            <div class="top">
+                                <div class="title">Private room</div>
+                                <div class="star">
+                                    <i class="fa fa-star" style="color: #FF385C;font-size: 13px;"></i>
+                                    <p style="margin-left:5px;color: #222222;">4,36</p>
+                                </div>
+                            </div>
+                            <div class="description">Georgian splendour</div>
+                        </a>
+                        <div class="money">
+                            <p class="price">$156</p>
+                            <p> / night</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+        <!--end playstays -->
+    </div>
+        <!-- start introduce online -->
+        <div class="wrapIntroOnline">
+           <div id="wraper">
+            <div class="containIntroOnline">
+                <div class="titileIntroOnline">
+                    <div class="titileIntroOnlineLeft">
+                        <h2>Introducing Online Experiences</h2>
+                        <p>Now you can meet people all over the world while trying something new. Join live, interactive video sessions led by expert hosts - all without leaving home.</p>
+                    </div>
+                    <div class="titileIntroOnlineRight">
+                        <a href="">Explore all</a>
+                    </div>
+                </div>
+                <div class="contentIntroOnline">
+                    <div class="contentIntroOnlineLeft">
+                        <a href=""> 
+                            <div class="imgIntroOnlineLeft">
+                                <img src="images/introOnline1.JPG" alt="">
+                            </div>
+                            <div class="wrapTextContentIntroOnline" >
+                                <span>Mix secrect sangria with pedro form Lisbon</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contentIntroOnlineRight">
+                        <div class="contentIntroOnlineRightTren">
+                             <div class="contentIntroOnlineRightTrenItem contentIntroOnlineRightTrenLeft" >
+                                <a href=""> 
+                                    <div class="imgIntroOnlineRightTren">
+                                        <img src="images/introOnline2.JPG" alt=""> 
+                                    </div>
+                                    <div class="wrapTextContentIntroOnline">
+                                        <span>Stretch. Breathe. Relax. Yoga class with friends</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="contentIntroOnlineRightTrenItem contentIntroOnlineRightTrenRight" >
+                                <a href=""> 
+                                    <div class="imgIntroOnlineRightTren">
+                                        <img src="images/introOnline3.JPG" alt="">
+                                    </div>
+                                    <div class="wrapTextContentIntroOnline">
+                                        <span>Meditate to music with Janice from Amsterdam</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                         <div class="contentIntroOnlineRightDuoi">                         
+                                <a href=""> 
+                                     <div class="imgIntroOnlineRightDuoi"> 
+                                        <img src="images/introOnline4.JPG" alt="">
+                                    </div>
+                                    <div class="wrapTextContentIntroOnline">
+                                         <span>Support African penguins by drawing with jon</span>
+                                    </div>
+                                </a>                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           </div>
+        </div>
+        <!-- end introduce online -->
+
+        <div id="wraper">
+        <!-- start khối 4 -->
+        <div class="Block4eExplore">
+            <div class="title titleInContent">
+                Explore
+            </div>
+            <div class="wraper_feature">
+                <div class="feature_item">
+                    <a>
+                        <div class="img">
+                            <img src="./images/featrue1.jpg" alt="">
+                        </div>
+                        <div class="wrap_text_block4">
+                            <div class="title">200+ VERIFIED STAYS</div>
+                            <p>Explore chicago's stunning architecture from the inside-in homes verified for quality and design.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="feature_item">
+                    <a>
+                        <div class="img">
+                            <img src="./images/khoi4-1.JPG" alt="">
+                        </div>
+                        <div class="wrap_text_block4">
+                            <div class="title">200+ VERIFIED STAYS</div>
+                            <p>Explore chicago's stunning architecture from the inside-in homes verified for quality and design.
+                            </p>
+                         </div>
+                    </a>
+                </div>
+                <div class="feature_item">
+                    <a>
+                        <div class="img">
+                            <img src="./images/khoi4-3.JPG" alt="">
+                        </div>
+                         <div class="wrap_text_block4">
+                            <div class="title">200+ VERIFIED STAYS</div>
+                            <p>Explore chicago's stunning architecture from the inside-in homes verified for quality and design.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end khối 4 -->
+    </div>
+    <!-- end wrapper content -->
+
+    <footer>
+        <hr style="height: 1px;border: none;background-color: #EBEBEB;" />
+        <div class="container_footer">
+            <div class="menu">
+                <div class="item">
+                    <div class="title">
+                        Airbnb
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="">Careers</a></li>
+                            <li><a href="">News</a></li>
+                            <li><a href="">Policies</a></li>
+                            <li><a href="">Diversity & Belonging</a></li>
+                            <li><a href="">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        Discover
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="">Trust & Safety</a></li>
+                            <li><a href="">Travel Credit</a></li>
+                            <li><a href="">Gift Cards</a></li>
+                            <li><a href="">Airbnb Citizen</a></li>
+                            <li><a href="">Business Travel</a></li>
+                            <li><a href="">Things To Do</a></li>
+                            <li><a href="">Airbnbmag</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        Hosting
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="">Why Host</a></li>
+                            <li><a href="">Hospitality</a></li>
+                            <li><a href="">Responsible</a></li>
+                            <li><a href="">Community Center</a></li>
+                            <li><a href="">Host an Experience</a></li>
+                            <li><a href="">Open Homes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        Support
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="">Help</a></li>
+                            <li>
+                                <a href="">Neighborhood Support</a>
+                                <div class="new">New</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 1px;border: none;background-color: #EBEBEB;margin: 18px 0px;" />
+            <div class="foot">
+                <div class="left">
+                    <svg class="logo" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height: 1em; width: 1em; display: block; fill: currentcolor;color: #767676; font-size: 20px;  margin-right: 8px;">
+                        <path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+                        </path>
+                    </svg>
+                    <i class="far fa-copyright" style="font-size: 11px;padding-top: 4px; margin-right: 4px;"></i>
+                    <p style="font-size: 14px;padding-top: 1px; margin-right: 8px;">2020 Airbnb, Inc. All rights reserved.</p>
+                    <a href="">Term</a>
+                    <i class="fas fa-circle"></i>
+                    <a href="">Privacy</a>
+                    <i class="fas fa-circle"></i>
+                    <a href="">Site Map</a>
+                </div>
+                <div class="right">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""> <i class="fab fa-instagram"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./js/components.js"></script>
+</body>
+
+</html>
